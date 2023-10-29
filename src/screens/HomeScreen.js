@@ -10,7 +10,7 @@ const HomeScreen = ({ navigation }) => {
   useEffect(() => {
     db.transaction(function (txn) {
       txn.executeSql(
-        "SELECT name FROM tarefaDDM WHERE type='table' AND name='table_user'",
+        "SELECT name FROM sqlite_master WHERE type='table' AND name='table_user'",
         [],
         function (tx, res) {
           console.log('item:', res.rows.length);
